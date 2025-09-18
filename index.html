@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DESAFIO 3- PROPAGACION DEL ERROR</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>DESAFIO 3- PROPAGACION DEL ERROR</h1>
+        
+        <div class="exercises-grid">
+            <!-- Ejercicio 32: Datación por Carbono-14 -->
+            <div class="exercise-card">
+                <h2 class="exercise-title">32. Datación por Carbono-14</h2>
+                
+                <div class="formula-box">
+                    <strong>Fórmula:</strong> <span class="math-notation">f(t) = f(0) × e^(-kt)</span><br>
+                    <strong>Datos:</strong><br>
+                    • Vida media del C-14: 5,730 años<br>
+                    • Muestra actual: 77.45% del C-14 inicial<br>
+                    • k = ln(2) / 5730 ≈ 1.209 × 10⁻⁴
+                </div>
+
+                <div class="input-group">
+                    <label for="carbon-percentage">Porcentaje actual de C-14 (%):</label>
+                    <input type="number" id="carbon-percentage" value="77.45" step="0.01" min="0" max="100">
+                </div>
+
+                <button class="btn" onclick="calculateCarbonAge()">Calcular Edad</button>
+                <button class="btn" onclick="clearCarbon()">Limpiar</button>
+
+                <div id="carbon-result" class="result-box">
+                    <h3>Resultado:</h3>
+                    <div id="carbon-age"></div>
+                    <div class="steps" id="carbon-steps"></div>
+                </div>
+            </div>
+
+            <!-- Ejercicio 36: Ley de Enfriamiento de Newton -->
+            <div class="exercise-card">
+                <h2 class="exercise-title">36. Ley de Enfriamiento de Newton</h2>
+                
+                <div class="formula-box">
+                    <strong>Fórmula:</strong> <span class="math-notation">T(t) = T_s + (T_0 - T_s) × e^(-kt)</span><br>
+                    <strong>Problema:</strong><br>
+                    • Temperatura ambiente: 69°F<br>
+                    • Cuerpo a las 9:18 PM: 98.6°F<br>
+                    • Cuerpo una hora después: 78.0°F
+                </div>
+
+                <div class="input-group">
+                    <label for="temp-ambient">Temperatura ambiente (°F):</label>
+                    <input type="number" id="temp-ambient" value="69" step="0.1">
+                </div>
+
+                <div class="input-group">
+                    <label for="temp-initial">Temperatura inicial del cuerpo (°F):</label>
+                    <input type="number" id="temp-initial" value="98.6" step="0.1">
+                </div>
+
+                <div class="input-group">
+                    <label for="temp-after">Temperatura después de 1 hora (°F):</label>
+                    <input type="number" id="temp-after" value="78.0" step="0.1">
+                </div>
+
+                <button class="btn" onclick="calculateDeathTime()">Calcular Tiempo de Muerte</button>
+                <button class="btn" onclick="clearNewton()">Limpiar</button>
+
+                <div id="newton-result" class="result-box">
+                    <h3>Resultado:</h3>
+                    <div id="death-time"></div>
+                    <div class="steps" id="newton-steps"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
